@@ -1,0 +1,64 @@
+@import 'jeet'
+
+global-reset()
+
+html, body
+  height 100%
+  font-family verdana sans-serif
+  
+hr
+  margin 0
+  
+h1
+  font-size 2em
+  
+a
+  text-decoration none
+  cursor pointer
+  color blue
+
+a:hover
+  color darkblue
+  
+input
+  font-size 1em
+  margin 10px 0
+  padding 3px
+  
+select
+  font-size 1em 
+  
+headerFooterLayout(header-size, footer-size)
+  .wrapper
+    position relative
+    min-height 100%
+    
+  .header   
+    position fixed
+    width 100%
+    height header-size
+    line-height header-size
+    a
+      height 100%
+      display inline-block
+      padding 0 15px
+ 
+  .body
+    padding header-size+(header-size/2) 20px footer-size
+  
+  .footer
+    position absolute
+    bottom 0 
+    width 100%
+    height footer-size   
+    
+headerFooterLayout(50px, 100px)
+
+.menu a
+  display block
+
+.l3
+  col(1/4)
+  
+.l9
+  col(3/4)

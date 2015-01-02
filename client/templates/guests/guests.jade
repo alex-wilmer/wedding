@@ -1,0 +1,27 @@
+template(name='guests')
+  .wrapper
+    .header
+      a(href="{{pathFor 'splash'}}") &lsaquo;
+      unless currentUser
+        +loginButtons
+      else 
+        | Guests
+        hr
+    if currentUser
+      .body
+        form.new-guest
+          label Add Guest
+          input(name='name' placeholder='Guest name' autocomplete='off')
+
+        label Search
+        input.search(placeholder='Guest name' autocomplete='off')
+        
+        table
+          thead
+            tr
+              th Name
+              th Ticket
+              th Status
+          tbody
+            +each guests
+              +guest

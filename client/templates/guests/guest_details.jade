@@ -6,7 +6,9 @@ template(name='guestDetails')
       hr
 
     .body
-      a(href='{{pathFor "guestDetailsEdit"}}') Edit
       p Name: #{name}
       p Ticket: #{ticket}
       p Status: #{status}
+      br
+      a(href='{{pathFor "guestDetailsEdit"}}') Edit
+

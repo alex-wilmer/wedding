@@ -1,4 +1,4 @@
 MochaWeb?.testOnly ->
-  describe "a group of tests", ->
-    it "should respect equality", ->
+  describe "comparing identical numbers", ->
+    it "should return true", ->
       chai.assert.equal(5,5)

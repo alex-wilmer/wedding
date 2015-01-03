@@ -13,6 +13,13 @@ Router.route '/home',
   data: ->
     return Guests.findOne()
 
+Router.route '/guestbook',
+  name: 'guestbook'
+  waitOn: ->
+    return Meteor.subscribe 'guestbook'
+  data: ->
+    return guestbookPosts: GuestbookPosts.find()
+
 # Admin Routes
 
 Router.route '/guests', 

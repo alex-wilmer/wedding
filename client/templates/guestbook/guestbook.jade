@@ -1,4 +1,12 @@
 template(name='guestbook')
-  a(href='/#{home}') Back
-  h1 Guestbook
-  a Sign
+  .wrapper
+    .header
+      a(href='/#{home}') &lsaquo;
+      | Guestbook
+      if currentGuest
+        a#guestbookPostNew Sign
+      hr
+
+
+    .body
+      +guestbookTemplate

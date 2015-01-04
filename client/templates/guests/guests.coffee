@@ -21,7 +21,7 @@ Template.guests.events
      
     Meteor.call 'guestInsert', guest, (error, result) ->
       if error
-        alert error.error
+        alert error.reason
 
       if result.guestExists
         alert 'This guest already exists.'
@@ -36,4 +36,4 @@ pad = (len, num) ->
   rounds = len - num.toString().length
   for round in [1..rounds]
     num = '0' + num
-  return num
+  num

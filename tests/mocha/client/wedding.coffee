@@ -1,4 +1,6 @@
+assert = chai.assert
+
 MochaWeb?.testOnly ->
   describe "comparing identical numbers", ->
     it "should return true", ->
-      chai.assert.equal(5,5)
+      assert.equal(5,5)

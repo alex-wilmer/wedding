@@ -3,7 +3,7 @@ Template.details.created = ->
 
 Template.details.helpers
   detailsTemplate: ->
-    return Template[Session.get 'detailsTemplate']
+    Template[Session.get 'detailsTemplate']
 
 Template.details.events
   'click .menu a': (e) ->

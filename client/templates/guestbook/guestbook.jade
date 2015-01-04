@@ -4,9 +4,8 @@ template(name='guestbook')
       a(href='/#{home}') &lsaquo;
       | Guestbook
       if currentGuest
-        a#guestbookPostNew Sign
+        a#guestbookPostNew.a Sign
       hr
-
 
     .body
       +guestbookTemplate

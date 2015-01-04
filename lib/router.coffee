@@ -9,37 +9,38 @@ Router.route '/login', name: 'guestLogin'
 Router.route '/home', 
   name: 'guestPage'
   waitOn: ->
-    return Meteor.subscribe 'guest', Session.get 'currentGuest'
+    Meteor.subscribe 'guest', Session.get 'currentGuest'
   data: ->
-    return Guests.findOne()
+    Guests.findOne()
 
 Router.route '/guestbook',
   name: 'guestbook'
   waitOn: ->
-    return Meteor.subscribe 'guestbook'
+    [ Meteor.subscribe('guestbook')
+      Meteor.subscribe('guest', Session.get('currentGuest')) ]
   data: ->
-    return guestbookPosts: GuestbookPosts.find()
+    guestbookPosts: GuestbookPosts.find()
 
 # Admin Routes
 
 Router.route '/guests', 
   name: 'guests'
   waitOn: ->
-    return Meteor.subscribe 'guests'
+    Meteor.subscribe 'guests'
 
 Router.route '/guests/:_id', 
   name: 'guestDetails'
   waitOn: ->
-    return Meteor.subscribe 'guest', this.params._id
+    Meteor.subscribe 'guest', this.params._id
   data: ->
-    return Guests.findOne()
+    Guests.findOne()
 
 Router.route '/guests/:_id/edit',
   name: 'guestDetailsEdit'
   waitOn: ->
-    return Meteor.subscribe 'guest', this.params._id
+    Meteor.subscribe 'guest', this.params._id
   data: ->
-    return Guests.findOne()
+    Guests.findOne()
 
 # Hooks
 

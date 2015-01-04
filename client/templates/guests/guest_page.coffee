@@ -1,15 +1,15 @@
 Template.guestPage.helpers
   pending: ->
     guest = Guests.findOne this._id
-    return guest.status == 'Pending'
+    guest.status == 'Pending'
 
   accepted: ->
     guest = Guests.findOne this._id
-    return guest.status == 'Accepted'
+    guest.status == 'Accepted'
 
   declined: ->
     guest = Guests.findOne this._id
-    return guest.status == 'Declined'
+    guest.status == 'Declined'
 
 Template.guestPage.events
   'click .set-status': (e) ->

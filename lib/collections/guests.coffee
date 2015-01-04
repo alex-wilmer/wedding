@@ -2,10 +2,10 @@
 
 Guests.allow
   remove: ->
-    return Meteor.user()
+    Meteor.user()
 
   update: ->
-    return Meteor.user()
+    Meteor.user()
 
 Meteor.methods
   guestInsert: (guest) ->
@@ -30,4 +30,4 @@ Meteor.methods
     if !guest
       return wrongTicket: true 
 
-    return guestId: guest._id
+    guestId: guest._id

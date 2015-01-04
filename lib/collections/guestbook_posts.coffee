@@ -4,11 +4,13 @@ Meteor.methods
   guestbookPostsInsert: (post) ->
     check post,
       body: String
-      name: String
       guestId: String
 
     guest = Guests.findOne post.guestId
+
     if !guest
       return 'Guest does not exist.'
 
-    GuestbookPosts.insert post 
+    post = _.extend post, name: guest.name
+
+    GuestbookPosts.insert post

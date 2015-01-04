@@ -1,13 +1,14 @@
 head
   title alex&laura2015
+  meta(name='viewport' content='width=device-width')
 
 template(name='layout')
   +yield
 
 template(name='splash')
   .wrapper
-    .header
-      if currentUser
+    if currentUser
+      .header
         a(href="{{pathFor 'guests'}}") Guestlist
     .body
       .center

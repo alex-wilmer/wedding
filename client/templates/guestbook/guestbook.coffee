@@ -3,7 +3,7 @@ Template.guestbook.created = ->
 
 Template.guestbook.helpers
   guestbookTemplate: ->
-    return Template[Session.get 'guestbookTemplate']
+    Template[Session.get 'guestbookTemplate']
 
 Template.guestbook.events
   'click .a': (e) ->

@@ -3,16 +3,14 @@ template(name='details')
     .header
       a(href='/#{home}') &lsaquo;
       | Details
-      hr
 
     .body
-      .menu.l3
+      aside.menu
         a#detailsGeneral General
         a#detailsAccomodations Accomodations
         a#detailsClothing Clothing
         a#detailsPanAmGames Pan AM Games
-        a#detailsGifts Gifts
         a#detailsContact Contact
 
-      .content.l9
+      article
         +detailsTemplate

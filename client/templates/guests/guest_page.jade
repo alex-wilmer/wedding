@@ -3,7 +3,8 @@ template(name='guestPage')
     .header
       a(href="{{pathFor 'splash'}}") &lsaquo;
       | Welcome #{name}
-      hr
+      a(href="{{pathFor 'details'}}") Details
+      a(href="{{pathFor 'guestbook'}}") Guestbook 
 
     .body
       if pending
@@ -13,17 +14,12 @@ template(name='guestPage')
           p.
             We're so sorry you can't make it! 
             You can come back here at any time in case your plans change.
-        a#Accepted.set-status Accept
+        a#Accepted.set-status I can make it!
       unless declined
         if accepted
           p.
-            Wonderful! From here you can request additional guests,
-            let us know about any dietary restrictions and sign the guestbook!
-        a#Declined.set-status Decline
-      if accepted
-        a Dietary Requests
-        a Additional Guests
-      unless pending
-        a(href="{{pathFor 'guestbook'}}") Guestbook 
-
-      a(href="{{pathFor 'details'}}") Details
+            Wonderful!
+          a Are you bringing anyone?
+          br
+        a#Declined.set-status I can't make it!
+        

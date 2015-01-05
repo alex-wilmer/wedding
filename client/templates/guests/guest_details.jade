@@ -3,11 +3,11 @@ template(name='guestDetails')
     .header     
       a(href='{{pathFor "guests"}}') &lsaquo;
       | Guest Details
-
-    .body
-      p Name: #{name}
-      p Ticket: #{ticket}
-      p Status: #{status}
-      br
       a(href='{{pathFor "guestDetailsEdit"}}') Edit
 
+    .body
+      article
+        p Name: #{name}
+        p Ticket: #{ticket}
+        p Status: #{status}
+        br

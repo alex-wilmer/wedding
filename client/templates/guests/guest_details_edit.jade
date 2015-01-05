@@ -3,27 +3,28 @@ template(name='guestDetailsEdit')
     .header
       a(href="{{pathFor 'guestDetails'}}") &lsaquo;
       | Edit Guest Details
+      a.save Save
 
     .body
-      .label Name
-      input(name='name' value='#{name}' placeholder='Enter name')
+      article
+        .label Name
+        input(name='name' value='#{name}' placeholder='Enter name')
 
-      .label Ticket
-      input(name='ticket' value='#{ticket}' placeholder='Enter ticket')
+        .label Ticket
+        input(name='ticket' value='#{ticket}' placeholder='Enter ticket')
 
-      .label Status
-      select(name='status')
-        option(selected="{{equals status 'Pending'}}") Pending
-        option(selected="{{equals status 'Accepted'}}") Accepted
-        option(selected="{{equals status 'Declined'}}") Declined
+        .label Status
+        select(name='status')
+          option(selected="{{equals status 'Pending'}}") Pending
+          option(selected="{{equals status 'Accepted'}}") Accepted
+          option(selected="{{equals status 'Declined'}}") Declined
 
-      .label Dietary Requests
-      input(name='diet' value='#{diet}' placeholder='#{diet}')
+        .label Dietary Requests
+        input(name='diet' value='#{diet}' placeholder='#{diet}')
 
-      .label Additional Guests
-      +each guestRequests
-        +guestRequest
+        .label Additional Guests
+        +each guestRequests
+          +guestRequest
 
-      br
-      a.save Save
-      a.delete Delete
+        br
+        a.delete Delete

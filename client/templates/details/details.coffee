@@ -6,5 +6,5 @@ Template.details.helpers
     Template[Session.get 'detailsTemplate']
 
 Template.details.events
-  'click .menu a': (e) ->
+  'click nav a': (e) ->
     Session.set 'detailsTemplate', e.target.id

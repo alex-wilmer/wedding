@@ -5,12 +5,13 @@ template(name='details')
       | Details
 
     .body
-      aside.menu
-        a#detailsGeneral General
-        a#detailsAccomodations Accomodations
-        a#detailsClothing Clothing
-        a#detailsPanAmGames Pan AM Games
-        a#detailsContact Contact
+      aside
+        nav.side
+          a#detailsGeneral General
+          a#detailsAccomodations Accomodations
+          a#detailsClothing Clothing
+          a#detailsPanAmGames Pan AM Games
+          a#detailsContact Contact
 
       article
         +detailsTemplate

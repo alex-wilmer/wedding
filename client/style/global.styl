@@ -1,22 +1,22 @@
-@import 'jeet'
-
-// Variables
-
-primary = black
-primaryInvert = invert(primary)
-
 // Setup
 
 global-reset()
 
 *, *:before, *:after
   box-sizing border-box
+  
+hr
+  margin 0
+  
+// Fonts
 
 body
   font-family verdana sans-serif
   
-hr
-  margin 0
+// Headers
+
+h1, h2, h3
+  margin 10px 9
   
 h1
   font-size 2em
@@ -24,11 +24,19 @@ h1
 h2
   font-size 1.6em
   
+h3
+  font-size 1.3em
+  
 p
   line-height 1.3em
   
+// Links
+  
 a
   text-decoration none
+  cursor pointer
+  
+// Form Elements
   
 input, textarea
   font-size 1em
@@ -43,15 +51,15 @@ select
   margin 10px 0
   
 // Layout
+
+html, body
+  height 100%
+
+.wrapper
+  position relative
+  height 100%
   
 headerFooterLayout(header-size, footer-size)
-  html, body
-    height 100%
-
-  .wrapper
-    position relative
-    height 100%
-    
   .header   
     position fixed
     width 100%
@@ -63,10 +71,10 @@ headerFooterLayout(header-size, footer-size)
       height 100%
       display inline-block
       padding 0 20px
-       
+  
   .body
-    padding header-size+(header-size/2) 20px footer-size
-    height 100%
+    padding header-size 0 footer-size
+    clearfix()
   
   .footer
     position absolute
@@ -76,9 +84,24 @@ headerFooterLayout(header-size, footer-size)
     
 headerFooterLayout(50px, 100px)
 
-.menu a
+aside
+  float left
+  width 300px  
+  padding 20px
+  
+article
+  padding 20px 20px 20px 0
+  
+// Navigation
+
+nav.side a
   display block
   padding 10px 0
+  
+// Variables
+
+primary = black
+primaryInvert = invert(primary)
   
 // Buttons
 

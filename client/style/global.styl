@@ -16,7 +16,7 @@ body
 // Headers
 
 h1, h2, h3
-  margin 10px 9
+  margin 10px 0
   
 h1
   font-size 2em
@@ -73,7 +73,8 @@ headerFooterLayout(header-size, footer-size)
       padding 0 20px
   
   .body
-    padding header-size 0 footer-size
+    height 100%
+    padding header-size 0 footer-size 
     clearfix()
   
   .footer
@@ -84,14 +85,20 @@ headerFooterLayout(header-size, footer-size)
     
 headerFooterLayout(50px, 100px)
 
-aside
-  float left
-  width 300px  
-  padding 20px
-  
-article
-  padding 20px 20px 20px 0
-  
+asideArticleLayout(aside-width)
+  aside, article
+    float left
+    height 100%
+    padding 20px
+
+  aside
+    width aside-width
+    
+  article
+    width calc(100% - aside-width)
+    
+asideArticleLayout(250px)
+    
 // Navigation
 
 nav.side a

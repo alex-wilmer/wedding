@@ -1,5 +1,12 @@
 @import 'jeet'
 
+// Variables
+
+primary = black
+primaryInvert = invert(primary)
+
+// Setup
+
 global-reset()
 
 *, *:before, *:after
@@ -14,19 +21,14 @@ hr
 h1
   font-size 2em
   
+h2
+  font-size 1.6em
+  
 p
   line-height 1.3em
   
 a
   text-decoration none
-  cursor pointer
-  color blue
-
-a:hover
-  color darkblue
-  
-button
-  cursor pointer
   
 input, textarea
   font-size 1em
@@ -39,6 +41,8 @@ textarea
 select
   font-size 1em 
   margin 10px 0
+  
+// Layout
   
 headerFooterLayout(header-size, footer-size)
   html, body
@@ -75,10 +79,24 @@ headerFooterLayout(50px, 100px)
 .menu a
   display block
   padding 10px 0
+  
+// Buttons
 
-aside
-  float left
-  width 200px
+.btn
+  padding 8px
+  color primary
+  border 2px solid
+  text-align center
+  cursor pointer
+  transition background 0.3s ease 
+  
+.btn:hover
+  color primaryInvert
+  border 2px solid primary
+  background primary
+  
+.x
+  display inline-block
 
 // Tests
 

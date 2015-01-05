@@ -6,13 +6,8 @@ template(name='layout')
   +yield
 
 template(name='splash')
-  .wrapper
-    if currentUser
-      .header
-        a(href="{{pathFor 'guests'}}") Guestlist
-    .body
-      .center
-        h1 Alex & Laura
-        h2 25 JULY 2015
-        a(href='{{pathFor "details"}}') Details
-        a(href='{{pathFor "guestLogin"}}') RSVP
+  aside
+    h1 Alex & Laura
+    h2 25 JULY 2015
+    a.btn.x(href='{{pathFor "details"}}') Details
+    a.btn.x(href='{{pathFor "guestLogin"}}') RSVP

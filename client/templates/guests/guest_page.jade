@@ -9,18 +9,16 @@ template(name='guestPage')
     .body
       article
         if pending
-          p Thank you for going online!
+          h3 Thank you for going online!
         unless accepted
           if declined
-            p.
-              We're so sorry you can't make it! 
-              You can come back here at any time in case your plans change.
-          a#Accepted.set-status I can make it!
+            h2 We're so sorry you can't make it! 
+            h3 You can come back here at any time in case your plans change.
+            br
+          a#Accepted.btn.set-status I can make it!
         unless declined
           if accepted
-            p.
-              Wonderful!
-            a Are you bringing anyone?
+            h2 Wonderful!
             br
-          a#Declined.set-status I can't make it!
+          a#Declined.btn.set-status I can't make it!
         

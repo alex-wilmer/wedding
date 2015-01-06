@@ -1,0 +1,18 @@
+template(name='guestPageHome')
+  .p25
+    if pending
+      h3 Thank you for going online!
+      br  
+    unless accepted
+      if declined
+        h2 We're so sorry you can't make it! 
+        h3 You can come back here at any time in case your plans change.
+        br
+      a#Accepted.btn.set-status I can make it!
+    unless declined
+      if accepted
+        h2 Wonderful!
+        br
+      a#guestPageRequest.btn.set-template I'd like to bring someone.
+      br
+      a#Declined.btn.set-status I can't make it!

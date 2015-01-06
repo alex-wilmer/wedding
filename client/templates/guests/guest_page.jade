@@ -2,11 +2,11 @@ template(name='guestPage')
   .wrapper
     .header
       a(href="{{pathFor 'splash'}}") &lsaquo;
-      | Welcome #{name}
+      span Welcome #{name}
       a(href="{{pathFor 'details'}}") Details
       a(href="{{pathFor 'guestbook'}}") Guestbook 
 
-    .body
+    .body.home  
       .p25
         if pending
           h3 Thank you for going online!
@@ -21,5 +21,7 @@ template(name='guestPage')
           if accepted
             h2 Wonderful!
             br
+          a#guestRequest.btn I'd like to bring someone.
+          br
           a#Declined.btn.set-status I can't make it!
         

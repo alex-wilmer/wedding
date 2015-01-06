@@ -12,6 +12,5 @@ MochaWeb?.testOnly ->
   describe "If a guest is not logged in", ->
     it "they cannot access '/home'", ->
       Session.set 'currentGuest', undefined
-      console.log Router.current().url
       Router.go 'guestPage'
       assert.equal Router.current().url, '/login'

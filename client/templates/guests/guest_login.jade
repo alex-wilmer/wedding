@@ -5,7 +5,6 @@ template(name='guestLogin')
       | Sign In
     
     .body
-      article
-        form
-          p Please enter the ticket number written on your invitation.
-          input(name='ticket' placeholder='Number' autocomplete='off')
+      form.login
+        p Please enter the ticket number written on your invitation.
+        input(name='ticket' placeholder='Number' autocomplete='off')

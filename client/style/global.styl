@@ -1,6 +1,10 @@
+@import 'jeet'
+
 // Setup
 
 global-reset()
+
+//edit()
 
 *, *:before, *:after
   box-sizing border-box
@@ -94,10 +98,12 @@ asideArticleLayout(aside-width)
   aside, article
     float left
     height 100%
-    padding 20px
 
   aside
     width aside-width
+    
+  article
+    width calc(100% - 250px)
     
 asideArticleLayout(250px)
     
@@ -105,7 +111,10 @@ asideArticleLayout(250px)
 
 nav.side a
   display block
-  padding 10px 0
+  padding 20px
+  
+nav.side a:hover
+  background silver 
   
 // Variables
 
@@ -129,6 +138,28 @@ primaryInvert = invert(primary)
   
 .x
   display inline-block
+  
+// Utility Classes
+.pad
+  padding 20px
+  
+// Spec
+
+.title
+  width 205px
+  margin 0 auto
+  .btn
+    width 99px
+    
+aside
+  form
+    padding 20px
+    
+article > *:first-child
+  padding-top 20px
+
+form.login
+  padding 20px
 
 // Tests
 

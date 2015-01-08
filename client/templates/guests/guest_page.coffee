@@ -12,10 +12,10 @@ Template.guestPage.events
   'click .set-template': (e) ->
     Session.set 'guestPageTemplate', e.target.id
 
-  'submit form.guest-request': (e) ->
+  'submit form.guest-request, click .submit': (e) ->
     e.preventDefault()
 
-    name = e.target.name.value
+    name = $('[name="name"]').val()
 
     if !name
       return alert 'Please enter a name!'

@@ -41,7 +41,8 @@ Meteor.methods
     check id, String
     
     Guests.update id,
-      $remove: friend
+      $unset: 
+        friend: ''
   
   attemptLogin: (ticket) ->
     check ticket, String

@@ -7,6 +7,9 @@ Guests.allow
   update: ->
     Meteor.user()
 
+  update: ->
+    !!Session.get 'currentGuest'
+
 Meteor.methods
   guestInsert: (guest) ->
     check guest, 
@@ -21,6 +24,24 @@ Meteor.methods
       return guestExists: true  
     
     Guests.insert guest
+
+  updateGuestRequest: (friend, id) ->
+    check id, String
+    check friend,
+      name: String
+
+    if !friend.name
+      throw new Meteor.Error 'invalid-friend-request', 'Please enter a name!'
+
+    Guests.update id,
+      $set:
+        friend: friend
+
+  removeGuestRequest: (id) ->
+    check id, String
+    
+    Guests.update id,
+      $remove: friend
   
   attemptLogin: (ticket) ->
     check ticket, String

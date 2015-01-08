@@ -13,6 +13,10 @@ template(name='guestPageHome')
       if accepted
         h2 Wonderful!
         br
-      a#guestPageRequest.btn.set-template I'd like to bring someone.
+      unless pending
+        unless friend
+          a#guestPageRequest.btn.set-template I'd like to bring someone.
+        else
+          a#guestPageRequestDetails.btn.set-template Edit plus one details.
       br
       a#Declined.btn.set-status I can't make it!

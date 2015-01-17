@@ -29,8 +29,7 @@ Template.guests.events
     e.target.name.value = ''
 
   'keydown .search': (e) ->
-    setSearchTerm = -> Session.set 'searchTerm', e.target.value
-    setTimeout setSearchTerm, 0
+    delay 0, -> Session.set 'searchTerm', e.target.value
 
 pad = (len, num) ->
   rounds = len - num.toString().length

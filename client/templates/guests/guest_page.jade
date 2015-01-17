@@ -3,8 +3,9 @@ template(name='guestPage')
     .header
       a(href="{{pathFor 'splash'}}") &lsaquo;
       span Welcome #{name}
-      a(href="{{pathFor 'details'}}") Details
-      a(href="{{pathFor 'guestbook'}}") Guestbook 
+      nav.collapse
+        a(href="{{pathFor 'details'}}") Details
+        a(href="{{pathFor 'guestbook'}}") Guestbook 
 
     .body.home
       +guestPageTemplate

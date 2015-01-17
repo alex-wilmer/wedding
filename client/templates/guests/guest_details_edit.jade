@@ -7,24 +7,24 @@ template(name='guestDetailsEdit')
 
     .body
       .p25
-        .label Name
+        label Name
         input(name='name' value='#{name}' placeholder='Enter name')
 
-        .label Ticket
+        label Ticket
         input(name='ticket' value='#{ticket}' placeholder='Enter ticket')
 
-        .label Status
+        label Status
         select(name='status')
           option(selected="{{equals status 'Pending'}}") Pending
           option(selected="{{equals status 'Accepted'}}") Accepted
           option(selected="{{equals status 'Declined'}}") Declined
 
-        .label Dietary Requests
+        label Dietary Requests
         input(name='diet' value='#{diet}' placeholder='#{diet}')
 
-        .label Additional Guests
+        label Additional Guests
         +each guestRequests
           +guestRequest
 
         br
-        a.delete Delete
+        a.delete.btn.danger Delete

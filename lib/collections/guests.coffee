@@ -7,9 +7,6 @@ Guests.allow
   update: ->
     Meteor.user()
 
-  update: ->
-    !!Session.get 'currentGuest'
-
 Meteor.methods
   guestInsert: (guest) ->
     check guest, 

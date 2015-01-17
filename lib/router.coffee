@@ -45,7 +45,8 @@ Router.route '/guests/:_id/edit',
 # Hooks
 
 requireGuestLogin = ->
-  if !Session.get 'currentGuest'
+  guest = Guests.findOne()
+  if !guest
     Router.go 'guestLogin'
   else this.next()
 

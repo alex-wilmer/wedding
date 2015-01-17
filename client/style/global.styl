@@ -9,27 +9,38 @@ global-reset()
 *, *:before, *:after
   box-sizing border-box
   
-hr
-  margin 0
+// Colors
+
+darkPrimary = #7B1FA2
+primary = #9C27B0
+lightPrimary = #E1BEE7
+accent = #00BCD4
+textPrimary = #212121
+
+// Utility Classes
+
+.m10-0
+  margin 10px 0  
+
+.p25
+  padding 25px
+  
+.x
+  display inline-block
   
 // Fonts
 
 body
   font-family verdana sans-serif
+  color textPrimary
   
 // Headers
 
-h1, h2, h3
-  margin 10px 0
-  
-h1
-  font-size 2em
-  
-h2
-  font-size 1.6em
-  
-h3
-  font-size 1.3em
+header-sizes = 2em 1.6em 1.3em
+for size, i in header-sizes
+  h{i+1}
+    font-size size
+    @extend .m10-0
   
 // Paragraph
   
@@ -48,12 +59,8 @@ label
   display block
   
 input, textarea
-  font-size 1em
-  margin 10px 0
-  padding 3px
-  
-textarea
-  size 80%
+  font-size 0.85em
+  padding 10px 0
   
 select
   font-size 1em 
@@ -76,11 +83,6 @@ headerFooterLayout(header-size, footer-size)
     line-height header-size
     box-shadow 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26)
   
-    & > *
-      height 100%
-      display inline-block
-      padding 0 20px
-  
   .body
     height 100%
     padding header-size 0 footer-size 
@@ -92,8 +94,6 @@ headerFooterLayout(header-size, footer-size)
     width 100%
     height footer-size   
     
-headerFooterLayout(50px, 100px)
-
 asideArticleLayout(aside-width)
   aside, article
     float left
@@ -103,9 +103,10 @@ asideArticleLayout(aside-width)
     width aside-width
     
   article
-    width calc(100% - 250px)
+    width "calc(100% - %s)" % (aside-width)
     
-asideArticleLayout(250px)
+headerFooterLayout(50px, 100px)    
+asideArticleLayout(300px)
     
 // Navigation
 
@@ -117,26 +118,20 @@ nav.side a
 nav.side a:hover
   background silver 
   
-// Variables
-
-primary = black
-primaryInvert = invert(primary)
-  
 // Buttons
 
 .btn
-  display block
-  padding 8px
-  color primary
+  padding 6px 10px
+  color white
   border 2px solid
   text-align center
   cursor pointer
   transition background 0.3s ease 
   
 .btn:hover
-  color primaryInvert
-  border 2px solid primary
-  background primary
+  color textPrimary
+  border 2px solid white
+  background white
   
 .danger
   color red
@@ -144,21 +139,41 @@ primaryInvert = invert(primary)
 .danger:hover
   background red
   
-.x
-  display inline-block
-  
-// Utility Classes
-
-.p25
-  padding 25px
-  
 // Spec
+
+body
+  background url('https://ununsplash.imgix.net/photo-1417870839255-a23faa90c6b0?q=75&fm=jpg&s=96d46061e7ecc8eb2ef0e9016d1eeb99')
+  background-size cover
+  color white
+  
+.header *
+  padding 0 20px
+
+a
+  color white
+  
+input
+  border-top none
+  border-right none
+  border-left none
+  outline-style none
+
+input:focus
+  border-bottom 2px solid yellow
+  
+input
+  background transparent
+  color white
+  
+* + label
+  margin-top 10px
+  
+aside
+  color white
 
 .title
   width 205px
   margin 0 auto
-  .btn
-    width 99px
     
 .home .btn
   width 250px
